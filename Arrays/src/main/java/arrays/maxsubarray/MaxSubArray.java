@@ -2,6 +2,8 @@ package arrays.maxsubarray;
 
 import java.util.ArrayList;
 
+import arrays.maxAbsoluteDifference.MaxAbsoluteDifference;
+
 /**
  * Find out the maximum sub-array of non negative numbers from an array.
  * The sub-array should be continuous. That is, a sub-array created by
@@ -51,6 +53,16 @@ public class MaxSubArray {
 			}
 		}
 		return maxArray;
+	}
+
+	public static void main(String[] args) {
+			ArrayList<Integer> X = new ArrayList<Integer>(3);
+
+			X.add(1);X.add(3);X.add(-1);
+
+			MaxSubArray maxSubArray = new MaxSubArray();
+
+			System.out.println(maxSubArray.maxset(X));
 	}
 
 
