@@ -32,26 +32,33 @@ public class RepeatAndMissingNumberArray {
 		long sum = 0;
 		long squareSum = 0;
 		long temp;
-		for(int i = 0; i < a.size(); i++){
-			temp = a.get(i);
+		for(Integer i = 0; i < a.size(); i++){
+			temp = a.get(i).longValue();
 			sum = sum + temp;
 			sum = sum - (i + 1);// this will give us A - B at end.
 			squareSum = squareSum + temp * temp;
-			squareSum = squareSum - (i+1)*(i+1); // this will give us A^2 - B^2
+			squareSum = squareSum - (i.longValue()+1)*(i.longValue()+1); // this will give us A^2 - B^2
 		}
 
 		squareSum = squareSum / sum; //(A-B)(A+B)/(A-B) = (A+B)
-		int X = (int)(squareSum + sum) / 2;
-		int Y = (int)squareSum - X;
+		int X = (int) (squareSum + sum) / 2;
+		int Y = (int) squareSum - X;
 		result.add(X);
 		result.add(Y);
 		return result;
 	}
 
 	public static void main(String[] args) {
-		ArrayList<Integer> X = new ArrayList<Integer>(3);
 
-		X.add(3);X.add(1);X.add(2);X.add(5);X.add(3);
+		ArrayList<Integer> X = new ArrayList<Integer>();
+		for(int i =0; i < Math.pow(10, 5)-1; i++) {
+		X.add(i+1);
+		}
+
+		int size =(int) Math.pow(10, 5);
+
+		X.add(size-1,1);
+
 
 		RepeatAndMissingNumberArray repeatAndMissingNumberArray = new RepeatAndMissingNumberArray();
 
